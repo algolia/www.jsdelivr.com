@@ -10,7 +10,7 @@
 					</div>
 
 					<div class="project-name">
-						<h3><a href="/projects/{{name}}">{{name}}</a></h3>
+						<h3><a href="/projects/{{name}}">{{{ highlighted(this, 'name') }}}</a></h3>
 					</div>
 				</div>
 
@@ -113,6 +113,7 @@
 	var getCollectionIndex = require('public/js/utils/get-collection-index');
 	var tooltipDecorator = require('public/js/decorators/tooltip');
 	var selectDecorator = require('public/js/decorators/select');
+	var highlighted = require('public/js/utils/highlighted');
 
 	component.exports = {
 		noIntro: true,
@@ -127,6 +128,7 @@
 				cdnRoot: 'https://cdn.jsdelivr.net',
 				getFilesByVersion: getFilesByVersion,
 				getCollectionIndex: getCollectionIndex,
+				highlighted: highlighted,
 			};
 		},
 		decorators: {
